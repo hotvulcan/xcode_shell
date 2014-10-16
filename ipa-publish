@@ -26,27 +26,27 @@
 #须配置内容  start
 
 #sftp参数设置
-sftp_server=192.168.xx.xx
-sftp_username=xx
-sftp_password=xx
-sftp_workpath="/usr/share/xx/xx/xx"
+sftp_server=128.199.180.197
+sftp_username=root
+sftp_password=
+sftp_workpath="/home/rails/public/app"
 
 
 
 #发布应用的url地址
-pulish_url="http://xx.com/xx"
+pulish_url="http://128.199.180.197/app"
 
 #以下是邮箱的相关设置
 #收件人
-email_reciver=xx@xx.com
+email_reciver=dev.hotvulcan@gmail.com
 #发送者邮箱
-email_sender=xx@xx.com
+email_sender=hotvulcan@sina.com
 #邮箱用户名
-email_username=xx
+email_username=hotvulcan
 #邮箱密码
-email_password=xx
+email_password=wydykshmba
 #smtp服务器地址
-email_smtphost=smtp.exmail.qq.com
+email_smtphost=smtp.sina.com.cn
 
 
 #可配置内容  end
@@ -117,7 +117,7 @@ cd /tmp
 #创建临时文件夹
 tmpfoldername=ipa_tmp
 if [ -d ./${tmpfoldername} ];then
-	rm -rf ${tmpfoldername}
+	#rm -rf ${tmpfoldername}
 fi
 mkdir ${tmpfoldername}
 
@@ -141,7 +141,7 @@ display_name=$(/usr/libexec/PlistBuddy -c "print CFBundleDisplayName" ${app_info
 
 #删除临时文件夹
 cd ..
-rm -rf ${tmpfoldername}
+#rm -rf ${tmpfoldername}
 
 #进入到工程build路径下
 cd $build_path
@@ -151,7 +151,7 @@ ipa_name="${display_name}"
 
 
 if [ -d ./$target_name ];then
-	rm -rf $target_name
+	#rm -rf $target_name
 fi
 mkdir $target_name
 #拷贝ipa
@@ -246,7 +246,7 @@ ${shell_path}/uploadItemsServicesFiles $target_name ${sftp_server} ${sftp_userna
 #切换到tmp目录下
 serverIndexHtmlName=index.html
 cd /tmp
-rm ${serverIndexHtmlName}
+#rm ${serverIndexHtmlName}
 #从服务器下载index.html
 ${shell_path}/sftpDownloadFile ${serverIndexHtmlName} ${sftp_server} ${sftp_username} ${sftp_password} ${sftp_workpath} || exit
 #更新index.html

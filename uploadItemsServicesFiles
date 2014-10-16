@@ -47,7 +47,7 @@ expect {
 
 #删除文件夹中所有文件
 expect "sftp>"
-send "rm *\r"
+#send "rm *\r"
 
 #将当前路径下所有文件上传
 expect "sftp>"
